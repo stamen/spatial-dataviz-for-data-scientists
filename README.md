@@ -7,7 +7,8 @@ Covers the basics of web mapping, commonly used geospatial data structures for t
 ### Anatomy of a Web Map
 Introduction to tiled maps and web friendly geospatial data structures.
 
-*link to slide show / presentation (?)*
+![anatomy slide](https://raw.githubusercontent.com/maptime/anatomy-of-a-web-map/gh-pages/images/anatomy-of-a-web-map.png)
+
 
 ### Hands on with Leaflet.JS & MapboxGL.JS
 [Leaflet.JS](http://leafletjs.com) is a well known javascript library that allows for creating highly customized interactive web maps. We will demonstrate how get up and running with Leaflet by adding a Tile Layer and GeoJSON Layer. We will also take a quick look at MapboxGL and Mapzen's Tangram, tools that allow for utilizing the CPU graphics card to improve performance and expand what's capable with web mapping.
