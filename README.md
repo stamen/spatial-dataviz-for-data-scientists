@@ -49,9 +49,31 @@ Using Carto.JS and the Carto SQL API we can load data from a table in Carto into
 
 ### Hands on with D3.JS
 
-- GeoJSON & TopoJSON
+[D3.js](http://d3js.org) is a client-side javascript visualization and mapping library that differs from Leaflet and CARTO in many fundamental ways. Rather than relying on raster map tiles rendered on a server, D3 draws geometries in the browser using SVG or canvas. In the final section of today's workshop, we'll explore some of the possibilities that D3 opens up.
 
-- Map projections
+#### Your first D3 map (GeoJSON in D3)
+
+https://github.com/enjalot/wwsd/issues/6
+
+#### TopoJSON
+[TopoJSON](https://github.com/mbostock/topojson) is an extension of GeoJSON that encodes topology. One of the biggest benefits of this is
+that file sizes can be significantly smaller.
+
+A couple tools that can be used to orient yourself with TopoJSON files:
+[Inspect TopoJSON](http://blockbuilder.org/enjalot/63d06e2ccadad0cb30dc5f920efd1cdf)
+[Preview TopoJSON](http://blockbuilder.org/enjalot/fe2a8ee0ad59a58ce295f035419d9e63)
+
+**Rendering a map with d3 + TopoJSON + SVG](https://github.com/enjalot/wwsd/issues/12)**
+[<img src="img/example12.png">](https://github.com/enjalot/wwsd/issues/12)
+
+#### Map projections
+
+[Map projections](https://en.wikipedia.org/wiki/Map_projection) are an important concept, and we need at least a basic grasp
+of how they work to make the kinds of [custom maps](https://hi.stamen.com/an-ode-to-d3-js-projections-9d6477d6da0b#.bemxsm2j1) we'd like to with d3.
+[<img src="https://gist.github.com/enjalot/b3dcf273c3c6d56411b6/raw/d01821a6ae8e6e78681984fdfc52aa7f2fa4eb14/thumbnail.png">](https://hi.stamen.com/an-ode-to-d3-js-projections-9d6477d6da0b#.bemxsm2j1)
+
+One point we need to emphasize is that projections introduce distortion,
+to get a sense for how different projections distort the geometry of the earth play with [this example](http://blockbuilder.org/enjalot/bd552e711b8325c64729):
 
 ## Day 2
 
