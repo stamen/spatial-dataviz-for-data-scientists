@@ -13,7 +13,7 @@ Introduction to tiled maps and web friendly geospatial data structures.
 ### Hands on with Leaflet.JS & MapboxGL.JS
 [Leaflet.JS](http://leafletjs.com) is a well known javascript library that allows for creating highly customized interactive web maps. We will demonstrate how get up and running with Leaflet by adding a Tile Layer and GeoJSON Layer. We will also take a quick look at MapboxGL and Mapzen's Tangram, tools that allow for utilizing the CPU graphics card to improve performance and expand what's capable with web mapping.
 
-- Getting your first Leaflet map working with [Blockbuilder.org](http://blockbuilder.org)
+- Getting your first Leaflet map working with [Blockbuilder.org](http://blockbuilder.org). Example 1: [Leaflet starter](http://blockbuilder.org/almccon/6d632572739217d2804fd2d429b9fa23)
 
 - Loading tiles
 
