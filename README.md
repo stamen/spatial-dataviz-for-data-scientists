@@ -53,6 +53,8 @@ Using Carto.JS and the Carto SQL API we can load data from a table in Carto into
 
 ## Day 2
 
+(we may modify this based on specific interests and progress from Day 1)
+
 ### Choropleths, Classification, Analysis
 
 - Spatial analysis queries in SQL
@@ -68,3 +70,9 @@ Using Carto.JS and the Carto SQL API we can load data from a table in Carto into
 - Voronois
 
 - Simulation/Modeling?
+
+### Advanced tiled maps
+
+- Vector tiles
+
+- Tippecanoe and tile-reduce
