@@ -39,13 +39,13 @@ Introduction to tiled maps and web friendly geospatial data structures.
 - Creating a Leaflet `tileLayer` from a CARTO table
 
 #### Integrating CARTO with Leaflet
-Using Carto.JS and the Carto SQL API we can load data from a table in Carto into a Leaflet map.
+Using [Carto.JS](https://carto.com/docs/carto-engine/carto-js/getting-started/) and the [Carto SQL API](https://carto.com/docs/carto-engine/sql-api/making-calls/) we can load data from a table located in CARTO into a Leaflet map.
 
 - Example 1: [Loading GeoJSON from a Carto Table](http://bl.ocks.org/clhenrick/31196ab4b71d444582b7f8a6535f4c7c)
 
 - Example 2: [Loading a Carto Table as a TileLayer](http://bl.ocks.org/clhenrick/c07d946c3e5f982bc7afadc79b0c5716)
 
-- Example 1 extended: [Adding Interactivity to GeoJSON Layer](http://bl.ocks.org/clhenrick/59513f45bc99bf40ba55de923c490f09)
+- Example 1 extended: [Advanced GeoJSON usage](http://bl.ocks.org/clhenrick/59513f45bc99bf40ba55de923c490f09)
 
 ### Hands on with D3.JS
 
