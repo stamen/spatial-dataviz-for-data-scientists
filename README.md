@@ -17,15 +17,15 @@ Introduction to tiled maps and web friendly geospatial data structures.
 
 #### Getting your first Leaflet map working with [Blockbuilder.org](http://blockbuilder.org)
 
-- Create a bl.ock, load Leaflet. Example 1: [Leaflet starter](http://blockbuilder.org/almccon/6d632572739217d2804fd2d429b9fa23)
+- Example 1: Create a bl.ock, load [Leaflet starter](http://blockbuilder.org/almccon/6d632572739217d2804fd2d429b9fa23)
 
-- Change the tile provider. Example 2: [Leaflet starter (Toner basemap)](http://bl.ocks.org/almccon/48ad757db4c4be5fee5cf046df0d94bc)
+- Example 2: Change tile provider. [Leaflet starter (Toner basemap)](http://bl.ocks.org/almccon/48ad757db4c4be5fee5cf046df0d94bc)
 
-- Add a scale bar and URL hash using Leaflet plugins. Example 3: [Leaflet with scale bar and URL hash](http://bl.ocks.org/almccon/0dff3feb062c11c88b8cc150aef60235)
+- Example 3: [Leaflet with scale bar and URL hash](http://bl.ocks.org/almccon/0dff3feb062c11c88b8cc150aef60235) using plugins.
 
-- Load some GeoJSON. Example 4: [Leaflet starter with GeoJSON overlay](http://bl.ocks.org/almccon/89c3b7da30f8686d3777fdeb65d73250)
+- Example 4: [Leaflet starter with GeoJSON overlay](http://bl.ocks.org/almccon/89c3b7da30f8686d3777fdeb65d73250)
 
-- Some GeoJSON styling and interactivity. Example 5: [Leaflet styling and interaction](http://bl.ocks.org/almccon/5ec33135bea51edfe17c32f1331c5182)
+- Example 5: [Leaflet with GeoJSON styling and interaction](http://bl.ocks.org/almccon/5ec33135bea51edfe17c32f1331c5182)
 
   Observe the stark difference between the raster _basemap_ and the vector data _overlay_. These two parts of the map are created differently, they behave differently, and the even _look_ different! For a long time this is what all web maps were like. But from here on out we'll see how the boundaries between basemap and overlay are starting to blur:
 
