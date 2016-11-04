@@ -57,6 +57,8 @@ Using [Carto.JS](https://carto.com/docs/carto-engine/carto-js/getting-started/) 
 
 - Example 1 extended: [Advanced GeoJSON usage](http://bl.ocks.org/clhenrick/59513f45bc99bf40ba55de923c490f09)
 
+- Example 2 extended: [Advanced Carto TileLayer usage](http://bl.ocks.org/clhenrick/cd1a348eec8474cb2fca1b503c82f6c1)
+
 ### Part 3: Hands on with D3.JS
 
 [D3.js](http://d3js.org) is a client-side javascript visualization and mapping library that differs from Leaflet and CARTO in many fundamental ways. Rather than relying on raster map tiles rendered on a server, D3 draws geometries in the browser using SVG or canvas. In the final section of today's workshop, we'll explore some of the possibilities that D3 opens up.
