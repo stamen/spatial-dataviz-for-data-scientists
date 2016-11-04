@@ -6,26 +6,36 @@ These workshops are designed to be very hands-on, with many examples that can be
 ## Day 1
 Covers the basics of web mapping, commonly used geospatial data structures for the web, and a range of options for how to create interactive spatial data Visualizations. Day one will leave you in good shape for diving deeper into interactively visualizing spatial data on the web.
 
-### Anatomy of a Web Map
+### Part 0: Anatomy of a Web Map
 Introduction to tiled maps and web friendly geospatial data structures.
 
 ![anatomy slide](https://raw.githubusercontent.com/stamen/spatial-dataviz-for-data-scientists/master/images/anatomy-of-a-web-map.png)
 
 
-### Hands on with Leaflet.JS & MapboxGL.JS
+### Part 1: Hands on with Leaflet.JS & MapboxGL.JS
 [Leaflet.JS](http://leafletjs.com) is a well known javascript library that allows for creating highly customized interactive web maps. We will demonstrate how get up and running with Leaflet by adding a Tile Layer and GeoJSON Layer. We will also take a quick look at MapboxGL and Mapzen's Tangram, tools that allow for utilizing the CPU graphics card to improve performance and expand what's capable with web mapping.
 
-- Getting your first Leaflet map working with [Blockbuilder.org](http://blockbuilder.org). Example 1: [Leaflet starter](http://blockbuilder.org/almccon/6d632572739217d2804fd2d429b9fa23)
+#### Getting your first Leaflet map working with [Blockbuilder.org](http://blockbuilder.org)
 
-- Loading tiles
+- Create a bl.ock, load Leaflet. Example 1: [Leaflet starter](http://blockbuilder.org/almccon/6d632572739217d2804fd2d429b9fa23)
 
-- GeoJSON
+- Change the tile provider. Example 2: [Leaflet starter (Toner basemap)](http://bl.ocks.org/almccon/48ad757db4c4be5fee5cf046df0d94bc)
 
-- Quick demo of MapboxGL (compare to leaflet w/ same data)
+- Add a scale bar and URL hash using Leaflet plugins. Example 3: [Leaflet with scale bar and URL hash](http://bl.ocks.org/almccon/0dff3feb062c11c88b8cc150aef60235)
 
-- Tangram
+- Load some GeoJSON. Example 4: [Leaflet starter with GeoJSON overlay](http://bl.ocks.org/almccon/89c3b7da30f8686d3777fdeb65d73250)
 
-### Hands on with CARTO Builder & Leaflet
+- Some GeoJSON styling and interactivity. Example 5: [Leaflet styling and interaction](http://bl.ocks.org/almccon/5ec33135bea51edfe17c32f1331c5182)
+
+  Notice here how we have to add another library (D3 in this case, but could be jQuery) to load the external file. Also observe the stark difference between the raster _basemap_ and the vector data _overlay_. These two parts of the map are created differently, they behave differently, and the even _look_ different! For a long time this is what all web maps were like. But from here on out we'll see how the boundaries between basemap and overlay are starting to blur:
+
+#### Basemaps (and overlays) in the world of WebGL
+
+- Quick demo of MapboxGL (compare to leaflet w/ same data): Example 6: [MapboxGL vs Leaflet](http://bl.ocks.org/lewis500/4bfd4c87cbb3f17661e6414a910ff89c)
+
+- Tangram is another GL-based renderer. Example 7: [Tangram simple demo](http://bl.ocks.org/almccon/65cdd4aef3f6e5884e8217fcc95efbf2)
+
+### Part 2: Hands on with CARTO Builder & Leaflet
 [CARTO](https://carto.com) is a web based platform for analyzing and visualizing spatial data. The new CARTO [Builder](https://carto.com/builder/) platform (being rolled out this month!) is a revamp of their previous Editor and allows users to perform complex spatial analysis, create widgets, and share maps without having to write a line of code. CARTO has a suite of API's which makes it a great "backend" for data visualizations on the web, allowing developers to leverage SQL, PostGIS, and CartoCSS in their web applications. We will give a brief tour of the platform and demonstrate how to incorporate data ("tables") from CARTO into Leaflet.
 
 #### Introduction to CARTO:
@@ -47,7 +57,7 @@ Using [Carto.JS](https://carto.com/docs/carto-engine/carto-js/getting-started/) 
 
 - Example 1 extended: [Advanced GeoJSON usage](http://bl.ocks.org/clhenrick/59513f45bc99bf40ba55de923c490f09)
 
-### Hands on with D3.JS
+### Part 3: Hands on with D3.JS
 
 [D3.js](http://d3js.org) is a client-side javascript visualization and mapping library that differs from Leaflet and CARTO in many fundamental ways. Rather than relying on raster map tiles rendered on a server, D3 draws geometries in the browser using SVG or canvas. In the final section of today's workshop, we'll explore some of the possibilities that D3 opens up.
 
