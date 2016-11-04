@@ -81,11 +81,37 @@ You can create TopoJSON using the command line tools, or using a tool like [MapS
 #### Map projections in D3
 
 [Map projections](https://en.wikipedia.org/wiki/Map_projection) are an important concept, and we need at least a basic grasp
-of how they work to make the kinds of [custom maps](https://hi.stamen.com/an-ode-to-d3-js-projections-9d6477d6da0b#.bemxsm2j1) we'd like to with d3.
-[<img src="https://gist.github.com/enjalot/b3dcf273c3c6d56411b6/raw/d01821a6ae8e6e78681984fdfc52aa7f2fa4eb14/thumbnail.png">](https://hi.stamen.com/an-ode-to-d3-js-projections-9d6477d6da0b#.bemxsm2j1)
+of how they work to make the kinds of [custom maps](https://hi.stamen.com/an-ode-to-d3-js-projections-9d6477d6da0b#.bemxsm2j1) that showcase the power of D3.
 
 One point we need to emphasize is that projections introduce distortion,
 to get a sense for how different projections distort the geometry of the earth play with [this example](http://blockbuilder.org/enjalot/bd552e711b8325c64729):
+
+Modify our Example 1 to use one of D3's [many other projections](https://github.com/d3/d3/blob/master/API.md#projections).
+
+- Example 4: [D3 map using Winkel Tripel projection](http://bl.ocks.org/almccon/7cba55415b3bc19e1f383043746756f2)
+
+Choose your projection based on the needs of your visualization:
+- If you're making a choropleth (we'll talk about these later), use an equal area projection.
+- Map of the US, use Albers USA which has built-in sub-projections for Alaska and Hawaii!
+- Say, California, use EPSG:3310 California Albers
+- Map of the world, consider a Winkel Tripel (although it's not an equal area projection)
+- For a city, maybe it doesn't matter if you use Mercator.
+
+Now that we've seen a variety of projections, why do tiled web maps use Mercator? For one thing the whole world fits (almost) perfectly in the square [zoom 0 tile](http://maps.stamen.com/toner/#0/0/0). All other tiles are subdivisions of this one.
+
+[<img src="images/toner-zoom0.png">](http://maps.stamen.com/toner/#0/0/0)
+
+D3 is convenient and it gives all these projections _names_, but if you're using anything other than D3, you might need to know your projection's [EPSG code](http://epsg.io).
+
+A few you might memorize after a while:
+  * [EPSG:4326](http://epsg.io/4326) "unprojected" latitude / longitude (a "geographic" projection)
+  * [EPSG:3857](http://epsg.io/3857) Web ("Google") Mercator  (old docs will use EPSG:900913)
+  * [EPSG:2163](http://epsg.io/2163) [US National Atlas Azimuthal Equal Area](http://bl.ocks.org/mbostock/5050837)
+  * [EPSG:3310](http://epsg.io/3310) [California Albers](http://bl.ocks.org/mbostock/5557726)
+
+Finally, we can switch back to CARTO and put these projection codes to work: With [the right PostGIS query](https://mappingmashups.carto.com/viz/2421c766-1305-11e6-a981-0ecd1babdde5/public_map) we are able to use raster tiles in non-Mercator projections! Just don't try to overlay them with any other raster maps!
+
+
 
 ## Day 2
 
