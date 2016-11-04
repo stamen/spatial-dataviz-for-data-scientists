@@ -27,7 +27,7 @@ Introduction to tiled maps and web friendly geospatial data structures.
 
 - Some GeoJSON styling and interactivity. Example 5: [Leaflet styling and interaction](http://bl.ocks.org/almccon/5ec33135bea51edfe17c32f1331c5182)
 
-  Notice here how we have to add another library (D3 in this case, but could be jQuery) to load the external file. Also observe the stark difference between the raster _basemap_ and the vector data _overlay_. These two parts of the map are created differently, they behave differently, and the even _look_ different! For a long time this is what all web maps were like. But from here on out we'll see how the boundaries between basemap and overlay are starting to blur:
+  Observe the stark difference between the raster _basemap_ and the vector data _overlay_. These two parts of the map are created differently, they behave differently, and the even _look_ different! For a long time this is what all web maps were like. But from here on out we'll see how the boundaries between basemap and overlay are starting to blur:
 
 #### Basemaps (and overlays) in the world of WebGL
 
