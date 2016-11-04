@@ -9,7 +9,7 @@ Covers the basics of web mapping, commonly used geospatial data structures for t
 ### Anatomy of a Web Map
 Introduction to tiled maps and web friendly geospatial data structures.
 
-![anatomy slide](https://raw.githubusercontent.com/maptime/anatomy-of-a-web-map/gh-pages/images/anatomy-of-a-web-map.png)
+![anatomy slide](https://raw.githubusercontent.com/stamen/spatial-dataviz-for-data-scientists/master/images/anatomy-of-a-web-map.png)
 
 
 ### Hands on with Leaflet.JS & MapboxGL.JS
