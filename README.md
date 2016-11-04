@@ -115,6 +115,12 @@ A few you might memorize after a while:
 
 Finally, we can switch back to CARTO and put these projection codes to work: With [the right PostGIS query](https://mappingmashups.carto.com/viz/2421c766-1305-11e6-a981-0ecd1babdde5/public_map) we are able to use raster tiles in non-Mercator projections! Just don't try to overlay them with any other raster maps!
 
+```
+SELECT ST_Transform(the_geom, 2163) AS the_geom_webmercator FROM tablename
+```
+
+For more information about projections in CARTO, see [Free Your Maps From Web Mercator](https://carto.com/blog/free-your-maps-web-mercator/)
+
 
 
 ## Day 2
