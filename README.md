@@ -63,20 +63,22 @@ Using [Carto.JS](https://carto.com/docs/carto-engine/carto-js/getting-started/) 
 
 #### Your first D3 map (GeoJSON in D3)
 
-https://github.com/enjalot/wwsd/issues/6
+- Example 1: [D3 map demo](http://bl.ocks.org/almccon/6ab03506d2e3ff9d843f69fa2d5c29cf)
 
 #### TopoJSON
-[TopoJSON](https://github.com/mbostock/topojson) is an extension of GeoJSON that encodes topology. One of the biggest benefits of this is
-that file sizes can be significantly smaller.
+Before we get too far into D3 mapping we need to talk about [TopoJSON](https://github.com/mbostock/topojson), which is an extension of GeoJSON that encodes topology. One of the biggest benefits of this is that file sizes can be significantly smaller.
 
 A couple tools that can be used to orient yourself with TopoJSON files:
-[Inspect TopoJSON](http://blockbuilder.org/enjalot/63d06e2ccadad0cb30dc5f920efd1cdf)
-[Preview TopoJSON](http://blockbuilder.org/enjalot/fe2a8ee0ad59a58ce295f035419d9e63)
+- [Inspect TopoJSON](http://blockbuilder.org/enjalot/63d06e2ccadad0cb30dc5f920efd1cdf)
+- [Preview TopoJSON](http://blockbuilder.org/enjalot/fe2a8ee0ad59a58ce295f035419d9e63)
 
-**Rendering a map with d3 + TopoJSON + SVG](https://github.com/enjalot/wwsd/issues/12)**
-[<img src="img/example12.png">](https://github.com/enjalot/wwsd/issues/12)
+- Example 2: [D3 with TopoJSON](http://bl.ocks.org/almccon/410b4eb5cad61402c354afba67a878b8)
 
-#### Map projections
+You can create TopoJSON using the command line tools, or using a tool like [MapShaper](http://www.mapshaper.org/), which also gives you the ability to _generalize_ your shapes. Generalizing reduces the level of detail in your data, which makes for smaller file sizes, and is often desirable for more elegant and visually pleasing maps.
+
+- Example 3: [Generalizing in MapShaper](http://bl.ocks.org/almccon/0af7228853c736f467cae8a9b906b008)
+
+#### Map projections in D3
 
 [Map projections](https://en.wikipedia.org/wiki/Map_projection) are an important concept, and we need at least a basic grasp
 of how they work to make the kinds of [custom maps](https://hi.stamen.com/an-ode-to-d3-js-projections-9d6477d6da0b#.bemxsm2j1) we'd like to with d3.
