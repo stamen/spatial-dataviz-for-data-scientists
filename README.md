@@ -90,7 +90,8 @@ Modify our Example 1 to use one of D3's [many other projections](https://github.
 
 - Example 4: [D3 map using Winkel Tripel projection](http://bl.ocks.org/almccon/7cba55415b3bc19e1f383043746756f2)
 
-Choose your projection based on the needs of your visualization:
+#### Choosing a projection
+Unless you are using a tiled basemap, you should choose an appropriate projection based on the needs of your visualization:
 - If you're making a choropleth (we'll talk about these later), use an equal area projection.
 - Map of the US, use Albers USA which has built-in sub-projections for Alaska and Hawaii!
 - Say, California, use EPSG:3310 California Albers
@@ -101,6 +102,7 @@ Now that we've seen a variety of projections, why do tiled web maps use Mercator
 
 [<img src="images/toner-zoom0.png">](http://maps.stamen.com/toner/#0/0/0)
 
+#### Projection codes, and how to use them in CARTO and PostGIS
 Note: D3 is convenient and it gives all these projections _names_, but if you're using anything other than D3, you might need to know your projection's [EPSG code](http://epsg.io).
 
 A few you might memorize after a while:
