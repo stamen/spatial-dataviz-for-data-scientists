@@ -148,6 +148,8 @@ For more information about projections in CARTO, see [Free Your Maps From Web Me
 
 - Voronois
 
+- Drawing to canvas
+
 - Simulation/Modeling?
 
 ### Advanced tiled maps
