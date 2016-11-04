@@ -71,7 +71,8 @@ Using [Carto.JS](https://carto.com/docs/carto-engine/carto-js/getting-started/) 
 
 #### Your first D3 map (GeoJSON in D3)
 
-- Example 1: [D3 map demo](http://bl.ocks.org/almccon/6ab03506d2e3ff9d843f69fa2d5c29cf)
+- Example 1: [D3 map demo](http://bl.ocks.org/almccon/6ab03506d2e3ff9d843f69fa2d5c29cf) 
+- Example 1a: [D3 map demo using D3.v4](http://bl.ocks.org/almccon/fe445f1d6b177fd0946800a48aa59c71)
 
 #### TopoJSON
 Before we get too far into D3 mapping we need to talk about [TopoJSON](https://github.com/mbostock/topojson), which is an extension of GeoJSON that encodes topology. One of the biggest benefits of this is that file sizes can be significantly smaller.
