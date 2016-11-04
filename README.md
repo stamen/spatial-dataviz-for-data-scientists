@@ -101,7 +101,7 @@ Now that we've seen a variety of projections, why do tiled web maps use Mercator
 
 [<img src="images/toner-zoom0.png">](http://maps.stamen.com/toner/#0/0/0)
 
-D3 is convenient and it gives all these projections _names_, but if you're using anything other than D3, you might need to know your projection's [EPSG code](http://epsg.io).
+Note: D3 is convenient and it gives all these projections _names_, but if you're using anything other than D3, you might need to know your projection's [EPSG code](http://epsg.io).
 
 A few you might memorize after a while:
   * [EPSG:4326](http://epsg.io/4326) "unprojected" latitude / longitude (a "geographic" projection)
