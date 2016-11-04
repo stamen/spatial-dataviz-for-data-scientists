@@ -41,12 +41,13 @@ Introduction to tiled maps and web friendly geospatial data structures.
 #### Introduction to CARTO:
 - Dashboard overview
 - Data vs. Maps views
-- Data Library
-- Data Observatory
+- [Data Library](https://carto.com/data-library)
+- [Data Observatory](https://carto.com/data-observatory/)
 - Widgets & Analysis
 - Exporting Data
 - Integrating the CARTO SQL API with Leaflet
 - Creating a Leaflet `tileLayer` from a CARTO table
+- Resources for [learning more](https://carto.com/learn/guides)
 
 #### Integrating CARTO with Leaflet
 Using [Carto.JS](https://carto.com/docs/carto-engine/carto-js/getting-started/) and the [Carto SQL API](https://carto.com/docs/carto-engine/sql-api/making-calls/) we can load data from a table located in CARTO into a Leaflet map.
