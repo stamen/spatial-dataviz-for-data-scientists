@@ -163,11 +163,87 @@ How do we view the results of our queries?
   - [QGIS](http://www.qgis.org/) can connect to PostGIS, but you have to save your query results to a new table to view them.
   - [TileMill](https://github.com/tilemill-project) still works, but you have to install it from source.
 
-Some useful queries:
+Some useful PostGIS functions, and real-world examples from Stamen projects:
 
-  ...
-  ...
-  ...
+ST_Distance:
+
+```
+SELECT a.cartodb_id, a.the_geom_webmercator, ST_Distance(a.the_geom_webmercator, b.the_geom_webmercator) as dist FROM sf_parcels_clipped a, bluegreenway_line_snapped b
+```
+
+ST_Intersection, ST_Intersects: (see also ST_Contains)
+
+```
+SELECT ST_Intersection(a.the_geom_webmercator, b.the_geom_webmercator) as the_geom_webmercator, b.name as bgw_zone FROM "stamen-org".sf_parcels_with_distance a, bluegreenway_zones_rough b WHERE ST_Intersects(a.the_geom_webmercator, b.the_geom_webmercator)
+```
+
+ST_MakeValid:
+
+```
+SELECT cartodb_id, ST_MakeValid(the_geom), bgw_id, name FROM bgw_projects
+```
+
+ST_Union:
+
+```
+SELECT ST_Union(the_geom_webmercator) as the_geom_webmercator, 'p70' as bgw_zone, 6383 as bgw_id, 'Pier 70' as name, null as pdf_id, 'open space' as category, 1000 as cartodb_id, false as id_is_fake FROM bgw_projects  WHERE name IN ('Pier 70 Upland Open Spaces', 'Pier 70 Slipways Park', 'Pier 70 Crane Cove Park')
+```
+
+ST_Centroid:
+
+```
+SELECT a.cartodb_id, a.users_shared, a.senate_24_superunit_id, a.senate24total, a.coastal_superunit_id, a.coastaltotal, b.unit_name AS senate_24_superunit_name, c.unit_name AS coastal_superunit_name, ST_MakeLine(ST_Centroid(b.the_geom_webmercator),ST_Centroid(c.the_geom_webmercator)) as the_geom_webmercator FROM "stamen-org".coastal_connections_senate_24 a, harvester_cpad_2015a_superunits b, harvester_cpad_2015a_superunits c WHERE a.senate_24_superunit_id = b.superunit_id AND a.coastal_superunit_id = c.superunit_id
+```
+
+ST_MakeLine:
+
+```
+UPDATE grants_from_to SET the_geom = ST_SetSRID(ST_MakeLine(ST_MakePoint(fromlng,fromlat),ST_MakePoint(tolng,tolat)), 4326);
+```
+
+ST_GeometryFromText
+
+```
+create table sf_parks as select * from cpad_units where ST_Intersects(ST_Transform(geom, 4326), ST_GeometryFromText('POLYGON((-123.2 36.7, -123.2 38.7, -121.6 38.7, -121.6 36.7, -123.2 36.7))',4326));
+```
+
+ST_SnapToGrid:
+
+```
+SELECT ST_Union(ST_SnapToGrid(the_geom,0.0001)) as the_geom, region
+```
+
+ST_Difference:
+
+```
+SELECT 2 as cartodb_id, ST_Difference(a.the_geom_webmercator, b.the_geom_webmercator) as the_geom_webmercator, 'Tanzania' as name, 0 as dn FROM tza_adm0_simplified a, sagcot b
+```
+
+ST_CollectionsExtract, ST_Collect
+
+```
+insert into regular_delaunay (select 25000 as spacing, ST_CollectionExtract(ST_DelaunayTriangles(ST_Collect(centroid)), 3) geom from hexagons where spacing::text = '25000');
+```
+
+CDB_HexagonGrid
+
+```
+create table hexbin_test as select CDB_HexagonGrid(ST_Collect(ST_transform(the_geom, 2163)), 50000, ST_SetSRID(ST_MakePoint(0,0),2163)) as the_geom_webmercator from states
+```
+
+ST_SummaryStats (for rasters):
+
+```
+update regular_delaunay_dump SET aspect = (SELECT (ST_SummaryStats(ST_Union(ST_Clip(rast, 2, geom_4326, true)))).mean aspect FROM srtm WHERE ST_Intersects(geom_4326, rast)), slope = (SELECT (ST_SummaryStats(ST_Union(ST_Clip(rast, 3, geom_4326, true)))).mean aspect FROM srtm WHERE ST_Intersects(geom_4326, rast)), hillshade = (SELECT (ST_SummaryStats(ST_Union(ST_Clip(rast, 4, geom_4326, true)))).mean aspect FROM srtm WHERE ST_Intersects(geom_4326, rast));
+```
+
+ST_GeoHash: (and [why you'd use it](http://www.paulnorman.ca/blog/2016/05/improve-your-st-geohash-sorting-with-these-three-simple-tricks/))
+
+```
+CREATE MATERIALIZED VIEW places AS SELECT osm_id, tags -> 'place' AS place, tags -> 'name' AS name, tags -> 'population' AS population, the_geom AS the_geom_webmercator FROM planet WHERE tags -> 'place' IN ('city','town','village','hamlet','suburb','neighbourhood') ORDER BY ST_GeoHash(ST_Transform(ST_SetSRID(Box2D(the_geom), 3857), 4326));
+```
+
+Also, some interesting news about Postgres 9.6: [Parallel queries in 9.6](https://www.postgresql.org/about/news/1703/)
 
 #### Spatial analysis in the browser with [turf.js](http://turfjs.org)
 
