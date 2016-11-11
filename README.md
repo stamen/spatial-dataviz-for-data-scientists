@@ -132,28 +132,73 @@ For more information about projections in CARTO, see [Free Your Maps From Web Me
 
 ## Day 2
 
-(we may modify this based on specific interests and progress from Day 1)
+### Choropleths, Classification, Representation
 
-### Choropleths, Classification, Analysis
+#### Choropleths, value-by-alpha maps, trivariate classification
 
-- Spatial analysis queries in SQL
+Example: [D3 choropleth](http://bl.ocks.org/almccon/a04ce36984ba638202399018445a74a9)
+Example: [value-by-alpha choropleth](http://bl.ocks.org/almccon/5842be02ea49e949b016fbebb1d9038a)
+Example: [Diverging color schemes](http://bl.ocks.org/almccon/d9de67d6dbc1a6fef95e5d3e79c88501)
+Example: [Trivariate choropleth](http://bl.ocks.org/almccon/12bef71ab27b32472e40f74500cb42b7)
 
-- Styling with CartoCSS in CARTO
+#### Classification in D3.js
 
-- Classification in D3.js
+See [D3 choropleth](http://bl.ocks.org/almccon/a04ce36984ba638202399018445a74a9) above, but try using other options instead of `d3.scaleLinear`
 
-### Advanced D3
+#### Hexbins
 
-- Streaming data
+Example: [Pop vs soda hexbins in CARTO](https://stamen.carto.com/u/stamen-org/viz/1a89f606-8012-11e4-b9fd-f23c91504230/public_map)
+Example: [geocoded social media hexbins in CARTO](https://stamen.carto.com/u/stamen-org/viz/9499c9a6-80cd-11e4-9e9b-f23c91504230/public_map)
+Example: [American Panorama hexbins](http://dsl.richmond.edu/panorama/forcedmigration/)
+Example: [resizing hexbins on the fly in D3](http://blocks.org/veltman/5994bc0e60cbef5f9390)
+Example: [dynamic hexbins in D3](http://bl.ocks.org/syntagmatic/e7dc072643b1a5f121047280093f459e)
 
-- Voronois
+### Spatial analysis
 
-- Drawing to canvas
+#### Spatial queries in SQL
 
-- Simulation/Modeling?
+#### Spatial analysis in the browser with [turf.js](http://turfjs.org)
+
+Example: [Using turf.js to measure features](http://bl.ocks.org/almccon/a76bb1eb9e3172720c3b9bd090ace725)
+
+Example: [Buffering TopoJSON features using turf.js](http://bl.ocks.org/almccon/4faf79b404b7f775f5a8ce0ee8bb48c0)
+
+Example: [Buffering TopoJSON features using turf.js, drawing with canvas](http://bl.ocks.org/almccon/2f92f27f4a58dab55644205fba6183f2)
+
+### Bigger data in D3
+
+#### Streaming data
+
+One way to stream CSV data is using [PapaParse](http://papaparse.com/)
+
+Example using a different technique: [Streaming Shapefile](http://bl.ocks.org/mbostock/2dd741099154a4da55a7db31fd96a892)
+
+#### Voronois
+
+Example: [World Airports Voronoi](http://bl.ocks.org/Fil/cb80fd5fa34c47a8cace0016aa8ddf2c)
+
+Example: [Using Voronoi as UI](http://bl.ocks.org/emeeks/037488ed37f0e1cbfe32)
+
+#### Drawing to canvas
+
+Example: [Selecting Countries on a Canvas Globe](http://bl.ocks.org/syntagmatic/6645345)
+
+Example: [Canvas Voronoi](http://bl.ocks.org/mbostock/6675193) vs [SVG Voronoi](http://bl.ocks.org/mbostock/4060366)
 
 ### Advanced tiled maps
 
-- Vector tiles
+#### React + MapboxGL
 
-- Tippecanoe and tile-reduce
+#### MapboxGL without using Mapbox's servers
+
+#### Vector tiles
+
+Example: [Using vector tiles in D3](http://bl.ocks.org/mbostock/5593150)
+
+#### Tippecanoe and tile-reduce
+
+- [Tippecanoe](https://github.com/mapbox/tippecanoe)
+- [Mapbox QA Tiles](https://www.mapbox.com/blog/osm-qa-tiles/)
+- [TileReduce](https://github.com/mapbox/tile-reduce)
+
+
