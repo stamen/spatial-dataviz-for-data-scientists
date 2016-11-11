@@ -144,6 +144,8 @@ Example: [Diverging color schemes](http://bl.ocks.org/almccon/d9de67d6dbc1a6fef9
 
 Example: [Trivariate choropleth](http://bl.ocks.org/almccon/12bef71ab27b32472e40f74500cb42b7)
 
+See also: blending CMYK colors: [Trees, Cabs, Crime](http://maps.stamen.com/trees-cabs-crime), our climate change maps for the [Audubon Society](http://stamen.com/work/audubon-society-climate-maps/).
+
 #### Classification in D3.js
 
 See [D3 choropleth](http://bl.ocks.org/almccon/a04ce36984ba638202399018445a74a9) above, but try using other options instead of `d3.scaleLinear`
