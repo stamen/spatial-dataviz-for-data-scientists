@@ -138,7 +138,7 @@ For more information about projections in CARTO, see [Free Your Maps From Web Me
 
 Example: [D3 choropleth](http://bl.ocks.org/almccon/a04ce36984ba638202399018445a74a9)
 
-Example: [value-by-alpha choropleth](http://bl.ocks.org/almccon/5842be02ea49e949b016fbebb1d9038a)
+Example: [value-by-alpha choropleth](http://bl.ocks.org/almccon/5842be02ea49e949b016fbebb1d9038a). See also [American Panorama foreign born map](http://dsl.richmond.edu/panorama/foreignborn)
 
 Example: [Diverging color schemes](http://bl.ocks.org/almccon/d9de67d6dbc1a6fef95e5d3e79c88501)
 
