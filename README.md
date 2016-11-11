@@ -300,7 +300,11 @@ Example: [Canvas Voronoi](http://bl.ocks.org/mbostock/6675193) vs [SVG Voronoi](
 
 #### React + MapboxGL
 
-Example using regular react: [mapbox-examples master branch](https://github.com/lewis500/mapbox-examples/tree/master)
+One reason React is popular is that you just tell React what you want the DOM to look like, and it figures out an efficient series of DOM manipulations to get you there. By contrast, usually when you use Mapbox-gl interactively, you have to remember what functions to call and with what arguments in response to user interactions. Like, if you wanted to make a landmarks layer invisible, you would call map.setLayoutProperty('landmarks','visibility','none').
+
+In this [post](https://www.mapbox.com/blog/mapbox-gl-js-reactive/), Mapbox explains how to use a feature from their [mapbox-gl-style-spec](https://github.com/mapbox/mapbox-gl-style-spec) library to use mapbox in a reactive way, like React. Here are two examples of applying their pattern, one with an ordinary stateful component and one using [redux](https://github.com/reactjs/redux). In addition to React, both examples depend on the [reselect](https://github.com/reactjs/reselect) library to cache results for better performance.
+
+Example using react with a stateful component: [mapbox-examples master branch](https://github.com/lewis500/mapbox-examples/tree/master)
 
 Example using redux: [mapbox-examples redux branch](https://github.com/lewis500/mapbox-examples/tree/redux)
 
