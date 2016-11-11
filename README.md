@@ -137,8 +137,11 @@ For more information about projections in CARTO, see [Free Your Maps From Web Me
 #### Choropleths, value-by-alpha maps, trivariate classification
 
 Example: [D3 choropleth](http://bl.ocks.org/almccon/a04ce36984ba638202399018445a74a9)
+
 Example: [value-by-alpha choropleth](http://bl.ocks.org/almccon/5842be02ea49e949b016fbebb1d9038a)
+
 Example: [Diverging color schemes](http://bl.ocks.org/almccon/d9de67d6dbc1a6fef95e5d3e79c88501)
+
 Example: [Trivariate choropleth](http://bl.ocks.org/almccon/12bef71ab27b32472e40f74500cb42b7)
 
 #### Classification in D3.js
@@ -148,9 +151,13 @@ See [D3 choropleth](http://bl.ocks.org/almccon/a04ce36984ba638202399018445a74a9)
 #### Hexbins
 
 Example: [Pop vs soda hexbins in CARTO](https://stamen.carto.com/u/stamen-org/viz/1a89f606-8012-11e4-b9fd-f23c91504230/public_map)
+
 Example: [geocoded social media hexbins in CARTO](https://stamen.carto.com/u/stamen-org/viz/9499c9a6-80cd-11e4-9e9b-f23c91504230/public_map)
+
 Example: [American Panorama hexbins](http://dsl.richmond.edu/panorama/forcedmigration/)
+
 Example: [resizing hexbins on the fly in D3](http://blocks.org/veltman/5994bc0e60cbef5f9390)
+
 Example: [dynamic hexbins in D3](http://bl.ocks.org/syntagmatic/e7dc072643b1a5f121047280093f459e)
 
 ### Spatial analysis
