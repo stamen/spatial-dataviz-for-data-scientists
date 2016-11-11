@@ -165,7 +165,7 @@ How do we view the results of our queries?
 
 Some useful PostGIS functions, and real-world examples from Stamen projects:
 
-ST_Distance:
+ST_Distance: (used in the background for the [Blue Greenway map](http://bluegreenway.org))
 
 ```
 SELECT a.cartodb_id, a.the_geom_webmercator, ST_Distance(a.the_geom_webmercator, b.the_geom_webmercator) as dist FROM sf_parcels_clipped a, bluegreenway_line_snapped b
@@ -173,8 +173,22 @@ SELECT a.cartodb_id, a.the_geom_webmercator, ST_Distance(a.the_geom_webmercator,
 
 ST_Intersection, ST_Intersects: (see also ST_Contains)
 
+Find all the buildings in the forest (example using an [osm2pgsql OSM database](https://mapzen.com/data/metro-extracts/), and transformed for display using [postgis-preview](https://github.com/NYCPlanning/postgis-preview)):
+
 ```
-SELECT ST_Intersection(a.the_geom_webmercator, b.the_geom_webmercator) as the_geom_webmercator, b.name as bgw_zone FROM "stamen-org".sf_parcels_with_distance a, bluegreenway_zones_rough b WHERE ST_Intersects(a.the_geom_webmercator, b.the_geom_webmercator)
+SELECT ST_Transform(a.way,4326) AS geom FROM planet_osm_polygon a, planet_osm_polygon b WHERE a.building='yes' AND b.landuse='forest' AND ST_Intersects(a.way,b.way)
+```
+
+Find all the road segemnts that pass through the forest:
+
+```
+SELECT ST_Transform(a.way,4326) AS geom FROM planet_osm_roads a, planet_osm_polygon b WHERE a.highway IS NOT NULL AND b.landuse='forest' AND ST_Intersects(a.way,b.way)
+```
+
+Find only the _parts_ of those road segments that are in the forest:
+
+```
+SELECT ST_Transform(ST_Intersection(a.way,b.way),4326) AS geom FROM planet_osm_roads a, planet_osm_polygon b WHERE a.highway IS NOT NULL AND b.landuse='forest' AND ST_Intersects(a.way,b.way)
 ```
 
 ST_MakeValid:
@@ -201,7 +215,7 @@ ST_MakeLine:
 UPDATE grants_from_to SET the_geom = ST_SetSRID(ST_MakeLine(ST_MakePoint(fromlng,fromlat),ST_MakePoint(tolng,tolat)), 4326);
 ```
 
-ST_GeometryFromText
+ST_GeometryFromText, if you want to create simply geometries using [Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text) format:
 
 ```
 create table sf_parks as select * from cpad_units where ST_Intersects(ST_Transform(geom, 4326), ST_GeometryFromText('POLYGON((-123.2 36.7, -123.2 38.7, -121.6 38.7, -121.6 36.7, -123.2 36.7))',4326));
@@ -219,19 +233,19 @@ ST_Difference:
 SELECT 2 as cartodb_id, ST_Difference(a.the_geom_webmercator, b.the_geom_webmercator) as the_geom_webmercator, 'Tanzania' as name, 0 as dn FROM tza_adm0_simplified a, sagcot b
 ```
 
-ST_CollectionsExtract, ST_Collect
+ST_CollectionsExtract, ST_Collect: because sometimes you need to split apart geometries to operate on their individual pieces:
 
 ```
 insert into regular_delaunay (select 25000 as spacing, ST_CollectionExtract(ST_DelaunayTriangles(ST_Collect(centroid)), 3) geom from hexagons where spacing::text = '25000');
 ```
 
-CDB_HexagonGrid
+CDB_HexagonGrid: (a CartoDB built-in function for making a hexagonal grid). Used for [American Panorama](http://dsl.richmond.edu/panorama/forcedmigration/)
 
 ```
 create table hexbin_test as select CDB_HexagonGrid(ST_Collect(ST_transform(the_geom, 2163)), 50000, ST_SetSRID(ST_MakePoint(0,0),2163)) as the_geom_webmercator from states
 ```
 
-ST_SummaryStats (for rasters):
+ST_SummaryStats (figure out the count, mean, stddev, etc. for intersecting raster cells):
 
 ```
 update regular_delaunay_dump SET aspect = (SELECT (ST_SummaryStats(ST_Union(ST_Clip(rast, 2, geom_4326, true)))).mean aspect FROM srtm WHERE ST_Intersects(geom_4326, rast)), slope = (SELECT (ST_SummaryStats(ST_Union(ST_Clip(rast, 3, geom_4326, true)))).mean aspect FROM srtm WHERE ST_Intersects(geom_4326, rast)), hillshade = (SELECT (ST_SummaryStats(ST_Union(ST_Clip(rast, 4, geom_4326, true)))).mean aspect FROM srtm WHERE ST_Intersects(geom_4326, rast));
