@@ -300,7 +300,13 @@ Example: [Canvas Voronoi](http://bl.ocks.org/mbostock/6675193) vs [SVG Voronoi](
 
 #### React + MapboxGL
 
+Example using regular react: [mapbox-examples master branch](https://github.com/lewis500/mapbox-examples/tree/master)
+
+Example using redux: [mapbox-examples redux branch](https://github.com/lewis500/mapbox-examples/tree/redux)
+
 #### MapboxGL without using Mapbox's servers
+
+Notice that the repo above uses Mapzen vector tiles in MapboxGL, not Mapbox's tiles.
 
 #### Vector tiles
 
