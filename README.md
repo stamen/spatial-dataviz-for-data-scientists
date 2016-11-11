@@ -155,7 +155,19 @@ Example: [dynamic hexbins in D3](http://bl.ocks.org/syntagmatic/e7dc072643b1a5f1
 
 ### Spatial analysis
 
-#### Spatial queries in SQL
+#### Spatial queries in PostGIS
+
+How do we view the results of our queries?
+  - [CARTO](http://carto.com) is the most fool-proof and interactive method
+  - [postgis-preview](https://github.com/NYCPlanning/postgis-preview) is a simple offline viewer with interactive queries, but requires your data to be in [WGS84](https://epsg.io/4326) (lat/lon, EPSG:4326).
+  - [QGIS](http://www.qgis.org/) can connect to PostGIS, but you have to save your query results to a new table to view them.
+  - [TileMill](https://github.com/tilemill-project) still works, but you have to install it from source.
+
+Some useful queries:
+
+  ...
+  ...
+  ...
 
 #### Spatial analysis in the browser with [turf.js](http://turfjs.org)
 
